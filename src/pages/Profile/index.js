@@ -2,8 +2,16 @@ import React, {useRef, useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import Background from '~/components/Background';
 
-import {Container, Form, FormInput, Separator, SubmitButton} from './styles';
+import {
+  Container,
+  Form,
+  FormInput,
+  Separator,
+  SubmitButton,
+  LogoutButton,
+} from './styles';
 import {upadateProfileRequest} from '~/store/modules/user/actions';
+import {signOut} from '~/store/modules/auth/actions';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -38,6 +46,9 @@ const Profile = () => {
     );
   }
 
+  function handleLogout() {
+    dispatch(signOut());
+  }
   return (
     <Background>
       <Container>
@@ -97,6 +108,7 @@ const Profile = () => {
           />
 
           <SubmitButton onPress={handleSubmit}>Atualizar perfil</SubmitButton>
+          <LogoutButton onPress={handleLogout}>Sair da aplicação</LogoutButton>
         </Form>
       </Container>
     </Background>
