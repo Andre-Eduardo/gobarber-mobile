@@ -54,7 +54,7 @@ const SignIn = ({navigation}) => {
             onChangeText={setPassword}
           />
 
-          <SubmitButton onPress={() => {}}>Acessar</SubmitButton>
+          <SubmitButton onPress={handleSubmit}>Acessar</SubmitButton>
         </Form>
         <SignLink onPress={() => navigation.navigate('SignUp')}>
           <SignLinkText>Criar conta</SignLinkText>

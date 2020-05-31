@@ -15,7 +15,7 @@ export function* signIn({payload}) {
     });
     const {token, user} = response.data;
 
-    if (!user.provider) {
+    if (user.provider) {
       Alert.alert(
         'Error no login',
         'O usuario não pode ser pestador de serviços'

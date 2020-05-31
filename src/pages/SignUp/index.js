@@ -68,9 +68,9 @@ const SignUp = ({navigation}) => {
             onChangeText={setPassword}
           />
 
-          <SubmitButton onPress={() => {}}>Criar conta</SubmitButton>
+          <SubmitButton onPress={handleSubmit}>Criar conta</SubmitButton>
         </Form>
-        <SignLink onPress={() => navigation.navigate('SignIn')}>
+        <SignLink onPress={() => navigation.push('SignIn')}>
           <SignLinkText>Acessar conta</SignLinkText>
         </SignLink>
       </Container>
