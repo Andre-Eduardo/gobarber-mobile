@@ -56,7 +56,17 @@ function NewAppointment({navigation}) {
       <Stack.Screen
         name="SelectDateTime"
         component={SelectDateTime}
-        options={{title: 'Main'}}
+        options={{
+          title: 'Selecione a data',
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.dispatch(CommonActions.goBack());
+              }}>
+              <Icon name="chevron-left" size={20} color="#fff" />
+            </TouchableOpacity>
+          ),
+        }}
       />
       <Stack.Screen
         name="Confirm"

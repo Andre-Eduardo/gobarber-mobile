@@ -32,3 +32,8 @@ export const Name = styled.Text`
   color: #333;
   text-align: center;
 `;
+export const Picker = styled.View`
+  background: #fff;
+  padding: 15px 30px;
+  margin-top: 30px;
+`;
