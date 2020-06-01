@@ -71,7 +71,7 @@ function NewAppointment({navigation}) {
       <Stack.Screen
         name="Confirm"
         component={Confirm}
-        options={{title: 'Main'}}
+        options={{title: 'Confimar agendamento'}}
       />
     </Stack.Navigator>
   );

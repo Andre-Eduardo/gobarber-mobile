@@ -43,8 +43,9 @@ const SelectDateTime = ({navigation, route}) => {
           data={hours}
           keyExtractor={(item) => item.time}
           renderItem={({item}) => (
-            <Hour onPress={() => handleSelectHours()} enabled={item.avaiable}>
-              {console.tron.log(item)}
+            <Hour
+              onPress={() => handleSelectHours(item.value)}
+              enabled={item.avaiable}>
               <Title>{item.time}</Title>
             </Hour>
           )}
