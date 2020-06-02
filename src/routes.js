@@ -83,8 +83,8 @@ export default function Routes({isSigned}) {
       {isSigned ? (
         <Tab.Navigator
           tabBarOptions={{
+            resetOnBlur: true,
             activeTintColor: '#fff',
-
             keyboardHidesTabBar: true,
             inactiveTintColor: 'rgba(255,255,255,0.6)',
             style: {
@@ -132,12 +132,3 @@ export default function Routes({isSigned}) {
     </NavigationContainer>
   );
 }
-// createAppContainer(
-//   createSwitchNavigator(
-//     {
-//       Sign: sign,
-//       App: app,
-//     },
-//     {initialRouteName: isSigned ? 'App' : 'Sign'}
-//   )
-// );

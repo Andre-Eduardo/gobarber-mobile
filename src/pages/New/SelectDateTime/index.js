@@ -22,6 +22,7 @@ const SelectDateTime = ({navigation, route}) => {
           date: date.getTime(),
         },
       });
+
       setHours(response.data);
     }
     loadAvailable();

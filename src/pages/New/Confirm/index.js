@@ -1,4 +1,6 @@
 import React, {useMemo} from 'react';
+import {CommonActions} from '@react-navigation/native';
+
 import {formatRelative, parseISO} from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import api from '~/services/api';
@@ -20,7 +22,13 @@ const Confirm = ({navigation, route}) => {
       provider_id: provider.id,
       date: time,
     });
-    navigation.push('Dasboard');
+
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{name: 'Dashboard'}],
+      })
+    );
   }
 
   return (

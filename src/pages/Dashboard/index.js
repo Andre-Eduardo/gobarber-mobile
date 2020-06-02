@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useState} from 'react';
+import {useFocusEffect} from '@react-navigation/native';
+
 import api from '~/services/api';
 
 import Background from '~/components/Background';
@@ -9,14 +11,16 @@ import {Container, Title, List} from './styles';
 const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
 
-  useEffect(() => {
-    async function loadAppointments() {
-      const response = await api.get('appointments');
+  useFocusEffect(
+    useCallback(() => {
+      async function loadAppointments() {
+        const response = await api.get('appointments');
 
-      setAppointments(response.data);
-    }
-    loadAppointments();
-  }, []);
+        setAppointments(response.data);
+      }
+      loadAppointments();
+    }, [])
+  );
 
   async function handleCancel(id) {
     const response = await api.delete(`appointments/${id}`);
